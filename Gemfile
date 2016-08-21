@@ -22,6 +22,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'coveralls', require: false
 
+gem 'tml-rails'
+
 group :development do
   gem 'dotenv-rails'
   gem 'spring'
