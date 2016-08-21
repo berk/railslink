@@ -42,21 +42,20 @@ Tml.configure do |config|
 
   # If you are using Rails.cache, use the following settings:
 
-  config.cache = {
-      enabled: true,
-      adapter: :rails,
-      version_check_interval: 10.seconds
-  }
+  # config.cache = {
+  #     enabled: true,
+  #     adapter: :rails,
+  #     version_check_interval: 10.seconds
+  # }
 
   # If you are using File based pre-generated cache, use the following settings:
 
-  #config.cache = {
-  #     enabled:   true,
-  #     adapter:   'file',
-  #     path:      File.join(Rails.root, :config, :tml),
-  #     version:   'current',
-  #     segmented: false
-  #}
+  config.cache = {
+      enabled:   true,
+      adapter:   'file',
+      path:      File.join(Rails.root, 'config', 'tml'),
+      version:   'current'
+  }
 
   # If you are using Redis, use the following settings:
 
