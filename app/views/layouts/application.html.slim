@@ -8,6 +8,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = tml_scripts_tag
     meta name="description" content=description
     meta property="og:locale" content="en_US"
     meta property="og:title" content=title
@@ -32,14 +33,15 @@ html
       ga('create', '#{configatron.ga.tracking_id}', 'auto');
       ga('send', 'pageview');
   body#home
+    header
+      = tml_language_selector_tag(:sideflags)
     = yield
     footer
       .container
         p
-          | Have a question? Read our 
-          =link_to 'Resources Wiki', 'https://github.com/railslink/resources/wiki', target: 'new'
-          | , or ask us on 
-          =link_to 'Twitter', 'https://twitter.com/railslink', target: 'new'
+          = tr('Have a question? Read our [link1: Resources Wiki], or ask us on [link2: Twitter]',
+                  link1: {href: 'https://github.com/railslink/resources/wiki', target: 'new'},
+                  link2: {href: 'https://twitter.com/railslink', target: 'new'})
         .links
           a href="https://twitter.com/railslink" target="_new" = fa_icon('twitter')
           a href="https://www.facebook.com/groups/railslink/" target="_new" = fa_icon('facebook-official')
